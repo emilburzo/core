@@ -58,10 +58,7 @@ async def test_sensors_sensors(
     assert state
     assert state.state == "27"
     assert state.attributes.get(ATTR_DEVICE_CLASS) == SensorDeviceClass.TEMPERATURE
-    assert (
-        state.attributes.get(ATTR_FRIENDLY_NAME)
-        == "Amazon Fire Battery temperature"
-    )
+    assert state.attributes.get(ATTR_FRIENDLY_NAME) == "Amazon Fire Battery temperature"
     assert state.attributes.get(ATTR_STATE_CLASS) == SensorStateClass.MEASUREMENT
 
     entry = entity_registry.async_get("sensor.amazon_fire_battery_temperature")
